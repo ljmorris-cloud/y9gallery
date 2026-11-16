@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Student Club Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#aab9fa;--ph:#fff;--ink:#16163a;--mute:#5f6385;--b:#4343f0;--t:#eceeff;--ln:#dcdff5;--nav:#18181d;--er:#cf2f48;--ok:#1b9a57;--fd:#f5f6ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#12142e;--ph:#1c1e3c;--ink:#eceeff;--mute:#a3a7cc;--t:#2a2d63;--ln:#33376b;--fd:#252850;--b:#6b6bff;--er:#ff7088;--ok:#3fbf7a}}
+:root[data-theme=dark]{--bg:#12142e;--ph:#1c1e3c;--ink:#eceeff;--mute:#a3a7cc;--t:#2a2d63;--ln:#33376b;--fd:#252850;--b:#6b6bff;--er:#ff7088;--ok:#3fbf7a}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:radial-gradient(70% 45% at 50% 0,#2b30a8aa,transparent 70%),#0a0b26;background-attachment:fixed;color:var(--ink);font-family:Urbanist,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;display:grid;place-items:center;padding:16px}
+.ph{position:relative;width:min(100%,400px);height:min(780px,calc(100dvh - 32px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px)));background:radial-gradient(circle at 108% 96%,#ffffff2e 0 24%,transparent 24.4%),radial-gradient(circle at -12% 62%,#a98bff55 0 30%,transparent 30.4%),radial-gradient(circle at 70% -8%,#ffffff22 0 20%,transparent 20.4%),linear-gradient(165deg,#4a6cff,#6a5cff 55%,#8a52f2);border-radius:34px;box-shadow:0 30px 60px -10px #000000aa,0 0 0 1px #ffffff26;display:flex;flex-direction:column;overflow:hidden}
+.v{display:flex;flex-direction:column;flex:1;min-height:0}
+@media(max-width:480px){body{padding:0}.ph{width:100%;height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));border-radius:0;box-shadow:none}}
+svg{display:block}
+.hd{display:flex;align-items:center;gap:10px;padding:24px 22px 12px}.hd h2{flex:1;margin:0;font-size:21px;color:#fff;text-shadow:0 2px 10px #2a1fa066}.hd .ib{background:#ffffff33;color:#fff}
+.ph::before,.ph::after{content:"";position:absolute;width:150px;height:150px;pointer-events:none;background:radial-gradient(#ffffff80 1.5px,transparent 1.8px) 0 0/16px 16px}.ph::before{left:0;top:0;-webkit-mask:linear-gradient(135deg,#000,transparent 65%);mask:linear-gradient(135deg,#000,transparent 65%)}.ph::after{right:0;bottom:0;-webkit-mask:linear-gradient(315deg,#000,transparent 65%);mask:linear-gradient(315deg,#000,transparent 65%)}.v{position:relative;z-index:1}
+.sc.lg{flex:0 1 auto;margin:auto 14px;min-height:0}.tt{margin:6px 0 0;font-size:27px;line-height:1.05;letter-spacing:.5px}.tt b{display:block;font-size:46px;letter-spacing:1px;background:linear-gradient(90deg,#5b3df0,#a05cff);-webkit-background-clip:text;background-clip:text;color:transparent}.dv{display:flex;align-items:center;gap:10px;color:var(--b);margin:8px 0;font-size:14px}.dv::before,.dv::after{content:"";flex:1;height:1.5px;background:linear-gradient(90deg,transparent,var(--b))}.dv::after{transform:scaleX(-1)}.sn{margin:6px 0 2px;font-weight:700;font-size:15px}.tg2{margin:0;font-style:italic;font-weight:600;color:var(--b);font-size:14px}.iw{position:relative}.iw svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--b)}.iw input{padding-left:44px}label svg{display:inline-block;vertical-align:-4px;margin-right:6px;color:var(--b)}.wv{display:block;width:calc(100% + 40px);height:58px;margin:18px -20px -20px}
+.lh2{position:relative;overflow:hidden;margin:-16px -20px 0;padding:36px 20px 40px;background:linear-gradient(160deg,#3a3df0,#1c1f8f 70%,#14176a);border-radius:0 0 36px 36px;box-shadow:0 14px 28px -14px #2528b8cc}.lh2::before,.lh2::after{content:"";position:absolute;border-radius:50%}.lh2::before{right:-60px;top:-70px;width:200px;height:200px;background:#ffffff12}.lh2::after{left:-40px;bottom:-60px;width:130px;height:130px;background:#3fd3ff22}.lh2>*{position:relative}.lh2 h1{color:#fff;font-size:26px;margin:14px 0 8px}.lh2 p{margin:0;color:#cdd2ff;font-size:14px;line-height:1.5}
+.ib{border:0;background:var(--t);color:var(--b);width:36px;height:36px;border-radius:12px;cursor:pointer;display:grid;place-items:center;flex:none}
+.sc{flex:1;overflow:auto;padding:20px;margin:6px 14px 12px;border-radius:28px;background:color-mix(in srgb,var(--ph) 88%,transparent);backdrop-filter:blur(14px);box-shadow:0 18px 40px -16px #1b1a8099,inset 0 0 0 1px #ffffffaa;scrollbar-width:thin;scrollbar-color:var(--b) transparent}
+.sc::-webkit-scrollbar{width:6px}.sc::-webkit-scrollbar-thumb{background:var(--b);border-radius:6px}
+.c{text-align:center}.mid{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px}
+h1{font-size:27px;margin:8px 0 6px;line-height:1.1;color:var(--ink)}h3{margin:16px 0 6px}
+.mu{color:var(--mute);font-size:14px;line-height:1.45;margin:6px 0}.sm{font-size:13px;margin:10px 0}.lh{line-height:1.55}
+.btn{width:100%;padding:13px;border:0;border-radius:30px;background:linear-gradient(90deg,#5b6cff,#8a4dff);color:#fff;font:inherit;font-weight:700;font-size:16px;cursor:pointer;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 10px 22px -8px #7a4dffcc,inset 0 1px 0 #ffffff55;transition:box-shadow .2s}.btn:hover:not(:disabled){box-shadow:0 12px 26px -6px #7a4dff,0 0 0 3px #8a4dff33,inset 0 1px 0 #ffffff55}
+.btn.o{background:transparent;color:var(--b);border:1.5px solid var(--b);box-shadow:none}.btn.d{background:linear-gradient(135deg,#e5486a,#b3203a);color:#fff;box-shadow:0 8px 22px #cf2f4866,inset 0 1px 0 #ffffff55}.btn:disabled{opacity:.5;cursor:not-allowed}
+.lk{border:0;background:none;color:var(--b);font:inherit;font-weight:700;cursor:pointer;padding:0}
+:is(.btn,.ib,.lk,.cc,.ch,.seg button,.nv button):focus-visible,:is(input,select):focus-visible{outline:3px solid var(--b);outline-offset:2px}
+input,select{width:100%;box-sizing:border-box;padding:12px;border:1.5px solid var(--ln);border-radius:14px;background:var(--fd);color:var(--ink);font:inherit;font-size:15px}
+input:focus,select:focus{border-color:var(--b);box-shadow:0 0 0 4px #4343f033,0 0 18px #6b6bff44}
+label{display:block;font-size:13px;font-weight:700;margin:14px 0 5px}
+.er{color:var(--er);font-size:13px;margin-top:4px}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.cc{background:var(--ph);border:1.5px solid var(--ln);border-radius:16px;padding:14px;text-align:left;cursor:pointer;color:inherit;font:inherit;box-shadow:0 8px 18px -10px #2528b866;transition:box-shadow .2s,border-color .2s}.cc:hover{border-color:var(--b);box-shadow:0 0 0 1px var(--b),0 12px 22px -12px #4343f0cc}
+.cc b{display:block;margin:6px 0 3px}.cc small{color:var(--mute);display:block;font-size:12px;line-height:1.35}.em{font-size:30px;display:block;filter:drop-shadow(0 4px 8px #4343f066)}
+.pl{display:inline-block;margin:8px 6px 0 0;padding:3px 9px;border-radius:20px;background:var(--t);color:var(--b);font-size:12px;font-weight:700}.pl.f{background:#ffe3e8;color:#b3203a}
+.hero{position:relative;overflow:hidden;height:140px;border-radius:18px;background:linear-gradient(145deg,#3a3df0,#1c1f8f);box-shadow:0 12px 22px -12px #2528b8cc;display:grid;place-items:center;font-size:64px;margin-bottom:10px}.hero::before{content:"";position:absolute;right:-30px;top:-40px;width:120px;height:120px;border-radius:50%;background:#ffffff14}
+.seg{display:flex;gap:8px}.seg button{flex:1;padding:11px;border:1.5px solid var(--ln);border-radius:10px;background:var(--fd);color:var(--ink);font:inherit;cursor:pointer}.seg .on{background:linear-gradient(135deg,#6262ff,#3a36e0);color:#fff;border-color:var(--b);box-shadow:0 0 16px #6b6bff77}
+.rc{border:1.5px solid var(--ln);border-radius:14px;padding:12px 14px;margin:10px 0;background:var(--ph)}.rc p{margin:6px 0;font-size:14px;overflow-wrap:anywhere}.rc p span{display:block;font-size:12px;color:var(--mute)}.rh{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.ch{border:1.5px solid var(--b);color:var(--b);background:transparent;border-radius:20px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer;margin:3px 4px 3px 0}.ch.on{background:linear-gradient(135deg,#6262ff,#3a36e0);color:#fff;box-shadow:0 0 12px #6b6bff66}
+.bw{margin:16px 0}.bl{display:flex;justify-content:space-between;margin-bottom:5px;font-weight:600}.bt{height:12px;border-radius:6px;background:var(--t)}.bf{height:100%;border-radius:6px;background:linear-gradient(90deg,#4343f0,#a070ff);box-shadow:0 0 12px #8a6bffaa}
+.nv{margin:0 14px 14px;border-radius:26px;background:#14165acc;backdrop-filter:blur(12px);box-shadow:0 12px 26px -10px #0a0b4a99,inset 0 0 0 1px #ffffff26;display:flex;justify-content:space-around;padding:8px 6px 9px}
+.nv button{border:0;background:none;color:#a2a4bd;font:inherit;font-size:11px;display:grid;justify-items:center;gap:3px;cursor:pointer;padding:0}
+.nv i{width:40px;height:40px;border-radius:50%;display:grid;place-items:center}.nv .on{color:#fff}.nv .on i{background:linear-gradient(135deg,#7a7aff,#3a36e0);box-shadow:0 0 20px #6b6bffdd,0 0 5px #a5a5ff,inset 0 1px 0 #ffffff55}
+.bd{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#3fd388,#12804a);box-shadow:0 0 34px #2fd07a99,inset 0 1px 0 #ffffff66;color:#fff;font-size:38px;display:grid;place-items:center}
+.erc{background:linear-gradient(160deg,var(--ph),var(--t));border:2px solid var(--er);border-radius:16px;padding:18px;box-shadow:0 0 30px #cf2f4844}.erc h2{color:var(--er);margin:0 0 6px}
+.ts{position:absolute;left:20px;right:20px;bottom:84px;background:var(--ink);color:var(--ph);padding:11px 14px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:3}.ts.on{opacity:1}
+.md{position:absolute;inset:0;background:#10123acc;display:grid;place-items:center;padding:20px;z-index:4}.mb{background:var(--ph);border-radius:18px;padding:20px;width:100%;box-sizing:border-box}
+@media(prefers-reduced-motion:reduce){.ts{transition:none}}
+</style>
+</head>
+<body>
+<main class="ph" id="ph"><div class="v" id="v"></div><div class="ts" id="ts" role="status"></div></main>
+<script>
+const T='STUDENT CLUB PORTAL',SCH='Aveley Secondary College',TAG='Find a club. Join in.',MINP=12,MAXA=3;
+const CL=[
+{name:'Debate Club',day:'Tuesday',location:'English Classroom (upstairs)',places:20,description:'Improve communications and debate skills.',more_info:'Improve communications and debate skills.',e:'🎤'},
+{name:'Art Club',day:'Wednesday',location:'Art Room (Downstairs)',places:15,description:'Explore drawing, painting and designs.',more_info:'Art Club is a relaxed space to draw, paint and design. Each term has a theme. You will try new techniques and make work for the school gallery wall.',e:'🎨'},
+{name:'Anime Club',day:'Thursday',location:'DIGME Room',places:12,description:'Watch a show each week, relax, and have fun with friends.',more_info:'Watch a show each week, relax, and have fun with friends.',e:'📺'},
+{name:'Cross Country Club',day:'Monday',location:'Sports Oval',places:30,description:'Participate in races, challenge friends, and have fun.',more_info:'Participate in races, challenge friends, and have fun.',e:'🏃'},
+{name:'Volleyball Club',day:'Friday',location:'Sports Hall',places:15,description:'Learn a new sport, participate in matches and improve communications',more_info:'Learn a new sport, participate in matches and improve communications',e:'🏐'}];
+const F=[
+{key:'full_name',label:'Full name',type:'text',req:1},
+{key:'year_group',label:'Year group',type:'number',req:1,hint:'7–12'},
+{key:'email_address',label:'Email address',type:'email',req:1},
+{key:'experience_level',label:'Experience level',type:'choice',req:1,options:['Beginner','Experienced']},
+{key:'why_do_you_want_to_join',label:'Why do you want to join?',type:'text',req:0},
+{key:'how_do_you_typically_find_out_about_clubs',label:'How do you typically find out about clubs?',type:'text',req:0},
+{key:'what_do_you_think_would_make_a_registration_easy_to_use',label:'What do you think would make a registration easy to use?',type:'text',req:0}];
+const SF=['email_address','year_group','how_do_you_typically_find_out_about_clubs','full_name'];
+const FF=['year_group','email_address','how_do_you_typically_find_out_about_clubs','full_name'];
+const SO=['club','full_name','year_group','email_address','experience_level','why_do_you_want_to_join','how_do_you_typically_find_out_about_clubs','what_do_you_think_would_make_a_registration_easy_to_use'];
+/* validation, ported from the Python */
+const al=s=>/^\p{L}+$/u.test(s);
+const lenv=(t,a,b)=>t.length<a?`Please enter at least ${a} characters.`:t.length>b?`Please keep it to ${b} characters or fewer.`:'';
+const V={
+full_name:t=>lenv(t,2,35)||(al(t.replace(/[ '\-]/g,''))?'':'Please use letters, spaces, hyphens and apostrophes only.'),
+year_group:t=>{if(!/^\d+$/.test(t))return 'Please type a whole number, like 8.';const n=+t;return n<7?'Please enter a number of 7 or more.':n>12?'Please enter a number of 12 or less.':''},
+email_address:t=>{if(t.includes(' '))return 'An email address cannot contain spaces.';if(t.split('@').length!==2)return 'An email address needs exactly one @ symbol.';const[n,d]=t.split('@');if(!n||!d.includes('.')||d.startsWith('.')||d.endsWith('.'))return 'Please use a format like name@school.edu.au';return t.toLowerCase().endsWith('.edu.au')?'':'Please use an email address that ends with .edu.au'},
+experience_level:t=>F[3].options.some(o=>o.toLowerCase()===t.toLowerCase())?'':'Please choose one of: '+F[3].options.join(', '),
+why_do_you_want_to_join:t=>lenv(t,0,200),
+how_do_you_typically_find_out_about_clubs:t=>lenv(t,5,75)||(al(t.replace(/ /g,''))?'':'Please use letters and spaces only.'),
+what_do_you_think_would_make_a_registration_easy_to_use:t=>lenv(t,5,100)||(al(t.replace(/ /g,''))?'':'Please use letters and spaces only.')};
+const pwErr=p=>p.length<MINP?`Your password needs at least ${MINP} characters.`:p.includes(' ')?'Your password cannot contain spaces.':/\d/.test(p)?'':'Your password needs at least one number.';
+const unErr=(us,u)=>u.length<3||u.length>20?'Your username needs 3 to 20 characters.':u.includes(' ')?'Your username cannot contain spaces.':us.some(x=>x.username===u.toLowerCase())?'That username is already taken.':'';
+const cv=(f,t)=>f.type==='number'?parseInt(t,10)||0:f.type==='choice'?(f.options.find(o=>o.toLowerCase()===t.toLowerCase())||t):f.type==='email'?t.toLowerCase():t;
+/* storage (saved in this browser; falls back to this session only) */
+const st={};
+function ld(k){if(!(k in st)){try{st[k]=JSON.parse(localStorage.getItem(k))||[]}catch(e){st[k]=[]}}return st[k]}
+function sv(k,v){st[k]=v;try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+async function hp(p){try{const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(p));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}catch(e){let h=0;for(const c of p)h=(h*31+c.charCodeAt(0))|0;return'x'+h}}
+/* helpers */
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const dv=v=>v===true?'Yes':v===false?'No':(v==null||v==='')?'-':String(v);
+const lab=k=>k==='club'?'Club':(F.find(f=>f.key===k)||{label:k}).label;
+const regs=()=>ld('regs');
+const left=n=>{const c=CL.find(c=>c.name===n);return c?c.places-regs().filter(r=>r.club===n).length:0};
+const err=(id,t)=>{const e=$(id);if(e)e.textContent=t};
+const ed=id=>`<div class="er" id="${id}" aria-live="polite"></div>`;
+const ent=(e,f)=>{if(e.key==='Enter')f()};
+let tt;function toast(m){clearTimeout(tt);$('ts').textContent=m;$('ts').className='ts on';tt=setTimeout(()=>$('ts').className='ts',2800)}
+const IC={h:'<path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',p:'<path d="M12 5v14M5 12h14"/>',l:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',c:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',b:'<path d="M15 18l-6-6 6-6"/>',o:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>',x:'<path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/>',u:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/>',k:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',i:'<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>'};
+const ic=(k,s=22)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${IC[k]}</svg>`;
+const S={scr:'login',user:null,tries:0,club:null,form:{club:''},rec:null,filt:[],q:'',sort:'',ff:'',vals:[],prev:'clubs'};
+function go(s,o){if(s==='error')S.prev=S.scr;Object.assign(S,o||{});S.scr=s;draw()}
+const hd=(t,b,r)=>`<div class="hd">${b?`<button class="ib" onclick="go('${b}')" aria-label="Back">${ic('b')}</button>`:''}<h2>${t}</h2>${r||''}</div>`;
+const nav=()=>{const a={clubs:'h',club:'h',register:'p',review:'p',done:'p',recs:'l',sum:'c'}[S.scr];return`<nav class="nv">${[['h','Clubs','clubs'],['p','Register','register'],['l','Records','recs'],['c','Summary','sum']].map(([k,t,s])=>`<button class="${a===k?'on':''}" onclick="${s==='register'?'regFor(null)':`go('${s}')`}" aria-label="${t}"><i>${ic(k)}</i>${t}</button>`).join('')}</nav>`};
+const rd=r=>F.map(f=>`<p><span>${f.label}</span>${esc(dv(r[f.key]))}</p>`).join('');
+const card=r=>`<div class="rc"><div class="rh"><b>ID ${r.id}: ${esc(r.club)}</b><button class="ib" onclick="ask(${r.id})" aria-label="Delete registration ${r.id}">${ic('x')}</button></div>${rd(r)}<p><span>Registered on</span>${r.date}</p></div>`;
+const places=n=>`<span class="pl ${n<=0?'f':''}">${n>0?n+' places left':'Full'}</span>`;
+const fld=f=>{const h=f.type==='choice'?`<div class="seg">${f.options.map(o=>`<button type="button" class="${S.form[f.key]===o?'on':''}" onclick="pick(this,'${f.key}','${o}')">${o}</button>`).join('')}</div>`:`<input id="f_${f.key}" value="${esc(S.form[f.key]||'')}" ${f.type==='number'?'inputmode="numeric"':''} oninput="S.form['${f.key}']=this.value">`;
+return`<label for="f_${f.key}">${f.label}${f.type==='number'?' ('+f.hint+')':''}${f.req?'':' (optional)'}</label>${h}${ed('er_'+f.key)}`};
+const VW={
+login:()=>`<div class="sc c lg"><svg width="124" height="82" viewBox="0 0 120 80" style="margin:0 auto"><path d="M38 2l14 20M82 2L68 22" stroke="#14164f" stroke-width="3" stroke-linecap="round"/><rect x="26" y="20" width="68" height="52" rx="10" fill="#fff" stroke="#14164f" stroke-width="3"/><circle cx="46" cy="40" r="6" fill="#4a4df0"/><path d="M36 60c0-8 20-8 20 0" fill="#4a4df0"/><path d="M64 38h20M64 48h14" stroke="#4a4df0" stroke-width="3" stroke-linecap="round"/><circle cx="96" cy="20" r="14" fill="#7a4dff"/><circle cx="92" cy="17" r="3" fill="#fff"/><circle cx="100" cy="17" r="3" fill="#fff"/><path d="M86 28c0-5 12-5 12 0M94 28c0-5 12-5 12 0" fill="#fff"/></svg>
+<h1 class="tt">${T.slice(0,T.lastIndexOf(' '))}<b>${T.slice(T.lastIndexOf(' ')+1)}</b></h1><div class="dv">★</div><p class="sn">${SCH}</p><p class="tg2">${TAG}</p><div style="text-align:left;margin-top:12px">
+<label for="u">${ic('u',16)}Username</label><div class="iw">${ic('u',18)}<input id="u" placeholder="Enter your username" autocomplete="username" onkeydown="ent(event,doLogin)"></div>
+<label for="p">${ic('k',16)}Password</label><div class="iw">${ic('k',18)}<input id="p" type="password" placeholder="Enter your password" autocomplete="current-password" onkeydown="ent(event,doLogin)"></div>${ed('e')}</div>
+<p class="sm">Forgot password? <button class="lk" onclick="toast('Please ask your teacher to reset your password.')">Reset now</button></p>
+<button class="btn" onclick="doLogin()">${ic('i',20)}Sign in</button>
+<p class="sm">Are you new here? <button class="lk" onclick="go('signup')">Sign up</button></p><svg class="wv" viewBox="0 0 300 60" preserveAspectRatio="none"><path d="M0 22C60 4 110 40 170 22S270 4 300 18V60H0z" fill="#8a7dff40"/><path d="M0 36C70 18 120 50 190 34S270 22 300 32V60H0z" fill="#7a6cff55"/></svg></div>`,
+signup:()=>`<div class="sc"><h1 style="margin-top:22px">Create an account</h1><p class="mu">Passwords need at least ${MINP} characters, no spaces and one number.</p>
+<label for="su">Choose a username</label><input id="su" autocomplete="username">${ed('e1')}
+<label for="sp">Choose a password</label><input id="sp" type="password" autocomplete="new-password">${ed('e2')}
+<label for="sa">Type the password again</label><input id="sa" type="password" autocomplete="new-password" onkeydown="ent(event,doSignup)">${ed('e3')}
+<button class="btn" style="margin-top:20px" onclick="doSignup()">Register</button>
+<p class="sm c">Already have an account? <button class="lk" onclick="go('login')">Sign in</button></p></div>`,
+locked:()=>`<div class="sc c mid"><div class="erc"><h2>Too many failed attempts</h2><p class="mu">You used all ${MAXA} login tries.</p></div><button class="btn" onclick="go('login',{tries:0})">Start again</button></div>`,
+clubs:()=>`${hd('Clubs list','',`<button class="ib" onclick="out()" aria-label="Log out">${ic('o')}</button>`)}<div class="sc"><p class="mu">Hi, ${esc(S.user)}. ${SCH}. There are ${regs().length} saved registration(s). Years 7–12 can join.</p><div class="g">${CL.map((c,i)=>`<button class="cc" onclick="go('club',{club:${i}})"><span class="em">${c.e}</span><b>${c.name}</b><small>${c.description}</small>${places(left(c.name))}</button>`).join('')}</div></div>`,
+club:()=>{const c=CL[S.club],n=left(c.name);return`${hd(c.name,'clubs')}<div class="sc"><div class="hero">${c.e}</div>${places(n)}<p><b>Meets:</b> ${c.day} at ${c.location}</p><h3>About this club</h3><p class="lh">${c.more_info.trim()}</p><button class="btn" ${n<=0?'disabled':''} onclick="regFor(${S.club})">${n>0?'Go to registration':'This club is full'}</button></div>`},
+register:()=>`${hd('Registration','clubs')}<div class="sc"><label for="club">Club choice</label><select id="club" onchange="S.form.club=this.value"><option value="">Choose a club</option>${CL.map((c,i)=>`<option value="${i}" ${S.form.club==i?'selected':''} ${left(c.name)<=0?'disabled':''}>${c.name}${left(c.name)<=0?' (full)':''}</option>`).join('')}</select>${ed('er_club')}${F.map(fld).join('')}<button class="btn" style="margin-top:20px" onclick="chk()">Join club</button></div>`,
+review:()=>`${hd('Check your details','register')}<div class="sc"><p class="mu">Is this correct?</p><div class="rc"><b>${esc(S.rec.club)}</b>${rd(S.rec)}</div><button class="btn" onclick="save()">Confirm and join</button><button class="btn o" onclick="go('register')">Edit details</button></div>`,
+done:()=>`<div class="sc c mid"><div class="bd">✓</div><h2 style="margin:0">Registration successful!</h2><p class="mu">You joined ${esc(S.rec.club)}.<br>Your ID is <b>${S.rec.id}</b>.</p><button class="btn" onclick="go('clubs')">Back to clubs</button><button class="btn o" onclick="go('recs')">View saved registrations</button></div>`,
+error:()=>`<div class="sc c mid"><div class="erc"><h2>ERROR!</h2><p>There has been an unexpected error, please try again :(</p><p class="mu">Nothing was saved.</p></div><button class="btn" onclick="go(S.prev)">Try again</button></div>`,
+recs:()=>`${hd('Saved registrations')}<div class="sc"><input id="q" aria-label="Search" placeholder="Search ${SF.map(k=>lab(k).toLowerCase()).join(', ')}" value="${esc(S.q)}" oninput="S.q=this.value;list()">
+<label for="so">Sort by</label><select id="so" onchange="S.sort=this.value;list()"><option value="">The order they were saved</option>${SO.map(k=>`<option value="${k}" ${S.sort===k?'selected':''}>${lab(k)}</option>`).join('')}</select>
+<label for="ff">Filter by</label><select id="ff" onchange="S.ff=this.value;list()"><option value="">Choose a field</option>${FF.map(k=>`<option value="${k}" ${S.ff===k?'selected':''}>${lab(k)}</option>`).join('')}</select>
+<div id="fv"></div><div id="fa"></div><p class="mu" id="cnt"></p><div id="rl"></div></div>`,
+sum:()=>{const a=regs(),n=c=>a.filter(r=>r.club===c.name).length,m=Math.max(1,...CL.map(n));return`${hd('Registrations per club')}<div class="sc">${CL.map(c=>`<div class="bw"><div class="bl"><span>${c.e} ${c.name}</span><span>${n(c)}</span></div><div class="bt"><div class="bf" style="width:${n(c)/m*100}%"></div></div></div>`).join('')}<p class="mu">${a.length} registration(s) in total.</p></div>`}};
+function draw(){$('v').innerHTML=VW[S.scr]()+(['login','signup','locked','error'].includes(S.scr)?'':nav());if(S.scr==='recs')list()}
+/* actions */
+function enter(u,m){S.user=u;go('clubs');toast(m+u+'!')}
+function out(){S.user=null;go('login')}
+async function doLogin(){const u=$('u').value.trim(),p=$('p').value,us=ld('users');
+if(!us.length)return err('e','There are no accounts yet. Please create one first.');
+const h=await hp(p);
+if(us.some(x=>x.username===u.toLowerCase()&&x.password_hash===h)){S.tries=0;return enter(u.toLowerCase(),'Welcome back, ')}
+S.tries++;const l=MAXA-S.tries;
+if(l>0)err('e',`Incorrect username or password. ${l} attempt(s) left.`);else go('locked')}
+async function doSignup(){const u=$('su').value.trim(),p=$('sp').value,a=$('sa').value,us=ld('users');
+['e1','e2','e3'].forEach(i=>err(i,''));
+const ue=unErr(us,u);if(ue)return err('e1',ue);
+const pe=pwErr(p);if(pe)return err('e2',pe);
+if(a!==p)return err('e3','The passwords did not match. Try again.');
+us.push({username:u.toLowerCase(),password_hash:await hp(p)});sv('users',us);enter(u.toLowerCase(),'Account created. Welcome, ')}
+function regFor(i){if(i!=null)S.form={club:''+i};go('register')}
+function pick(b,k,v){S.form[k]=v;[...b.parentNode.children].forEach(x=>x.classList.toggle('on',x===b))}
+function chk(){let bad=0;const c=S.form.club;
+if(c===''||c==null){err('er_club','Please choose a club.');bad=1}else if(left(CL[c].name)<=0){err('er_club','Sorry, this club is full.');bad=1}else err('er_club','');
+for(const f of F){const t=(S.form[f.key]||'').trim();const e=!t?(f.req?'This cannot be left blank.':''):V[f.key](t);err('er_'+f.key,e);if(e)bad=1}
+if(bad)return;
+const rec={club:CL[c].name};for(const f of F)rec[f.key]=cv(f,(S.form[f.key]||'').trim());
+if(regs().some(r=>r.club===rec.club&&(r.email_address||'').toLowerCase()===rec.email_address.toLowerCase()))return err('er_email_address','That email is already registered for this club.');
+go('review',{rec})}
+function save(){try{const a=regs(),r={...S.rec};
+if(left(r.club)<=0){toast('Sorry, this club is full.');return go('clubs')}
+r.id=Math.max(0,...a.map(x=>x.id))+1;r.date=new Date().toLocaleDateString('en-CA');a.push(r);sv('regs',a);S.form={club:''};go('done',{rec:r})}catch(e){go('error')}}
+/* records: search, filter, sort, delete */
+function flt(){let r=regs();for(const[k,v]of S.filt)r=r.filter(x=>dv(x[k]).toLowerCase()===v.toLowerCase());return r}
+function applied(){const w=S.q.toLowerCase().split(/\s+/).filter(Boolean);
+let r=flt().filter(x=>{const c=SF.map(k=>dv(x[k]).toLowerCase()).join(' ')+' ';return w.every(t=>c.includes(t))});
+if(S.sort)r=[...r].sort((a,b)=>{const x=dv(a[S.sort]).toLowerCase(),y=dv(b[S.sort]).toLowerCase();return x<y?-1:x>y?1:0});return r}
+function list(){const all=regs(),r=applied();
+S.vals=S.ff?[...new Set(flt().map(x=>dv(x[S.ff])))].sort():[];
+$('fv').innerHTML=S.vals.length?'<p class="mu">Values to choose from:</p>'+S.vals.map((v,i)=>`<button class="ch" onclick="addF(${i})">${esc(v)}</button>`).join(''):'';
+$('fa').innerHTML=S.filt.map(([k,v],i)=>`<button class="ch on" onclick="S.filt.splice(${i},1);list()" aria-label="Remove filter ${lab(k)}">${lab(k)}: ${esc(v)} ✕</button>`).join('');
+$('cnt').textContent=all.length?`Showing ${r.length} of ${all.length} registration(s).`:'';
+$('rl').innerHTML=!all.length?'<p class="mu">Nothing saved yet. Choose Register to add one.</p>':r.length?r.map(card).join(''):'<p class="mu">No matches. Try a shorter word or remove a filter.</p>'}
+function addF(i){S.filt.push([S.ff,S.vals[i]]);list()}
+function ask(id){const r=regs().find(x=>x.id===id);if(!r)return;
+$('ph').insertAdjacentHTML('beforeend',`<div class="md" id="md"><div class="mb"><h3 style="margin-top:0">Delete this registration?</h3><div class="rc"><b>ID ${id}: ${esc(r.club)}</b><p><span>${lab('full_name')}</span>${esc(dv(r.full_name))}</p><p><span>${lab('email_address')}</span>${esc(dv(r.email_address))}</p></div><button class="btn d" onclick="del(${id})">Delete</button><button class="btn o" onclick="$('md').remove()">Cancel</button></div></div>`)}
+function del(id){const a=regs(),i=a.findIndex(x=>x.id===id);if(i>-1){a.splice(i,1);sv('regs',a)}$('md').remove();toast('Registration deleted.');list()}
+draw();
+</script>
+</body>
+</html>
